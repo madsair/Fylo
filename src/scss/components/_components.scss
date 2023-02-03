@@ -1,0 +1,274 @@
+/* start header */
+header {
+  background-color: $secondary;
+  padding-bottom: 2rem;
+  .navbar {
+    .navbar-brand {
+      img {
+        height: 35px;
+      }
+    }
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $lightwhite;
+          padding: 0 2rem;
+          font-family: $secondfont;
+          transition: 0.2s;
+          &:hover,
+          &:active {
+            @include navlinks();
+          }
+        }
+      }
+    }
+    .navbar-toggler {
+      color: white;
+      font-size: 30px;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
+/* end header */
+/* start landing */
+.landing {
+  background-color: $secondary;
+  position: relative;
+  z-index: 3;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-image: url("../assets/bg-curvy-desktop.svg");
+    position: absolute;
+    bottom: -60px;
+    width: 100%;
+    left: 0;
+    height: 80%;
+    background-position: center;
+    background-size: cover;
+    @include mdquery(768px) {
+      background-image: url("../assets/bg-curvy-mobile.svg");
+    }
+  }
+  .landing-text {
+    width: 40rem;
+    img {
+      max-width: 100%;
+    }
+    h1 {
+      font-family: $secondfont;
+      line-height: 1.4;
+    }
+    p {
+      color: $lightwhite;
+      max-width: 30rem;
+      margin: 2rem auto 1.5rem;
+      font-size: 0.9rem;
+      @include mdquery(768px) {
+        max-width: revert;
+      }
+    }
+    a {
+      @include cta;
+      font-size: 0.9rem;
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+      &:hover {
+        background: $primary;
+      }
+    }
+  }
+}
+/* end landing */
+/* start features */
+.features {
+  .row > * {
+    padding-bottom: 5rem;
+    .features-info {
+      h4 {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        font-family: $secondfont;
+      }
+      p {
+        color: $lightwhite;
+        font-size: 0.9rem;
+        max-width: 25rem;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        @include mdquery(768px) {
+          max-width: revert;
+        }
+      }
+    }
+  }
+}
+/* end features */
+/* start work */
+.work {
+  .img {
+    max-width: 100%;
+  }
+  .work-info {
+    @include mdquery(992px) {
+      & {
+        margin-top: 4rem;
+      }
+    }
+    h2 {
+      font-family: $secondfont;
+    }
+    p {
+      color: $lightwhite;
+      font-size: 0.9rem;
+    }
+    a {
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 5px;
+      &::before {
+        position: absolute;
+        content: " ";
+        width: 100%;
+        background-color: $primary;
+        height: 1px;
+        bottom: 0;
+      }
+    }
+  }
+}
+/* end work */
+/* start reviews */
+.reviews {
+  .row > * {
+    padding-bottom: 2rem;
+    .card {
+      background-color: $revback;
+      &.quoted::before {
+        content: url("../assets/bg-quotes.png");
+        position: absolute;
+        top: -35px;
+        left: -10px;
+        z-index: -1;
+        @include mdquery(768px) {
+          left: 10px;
+        }
+      }
+      .card-body {
+        padding-left: 15px;
+        padding-right: 15px;
+        p {
+          color: $lightwhite;
+          font-size: 0.9rem;
+        }
+        .card-text {
+          margin: 2rem auto 1.5rem;
+        }
+        .card-author {
+          img {
+            height: 50px;
+          }
+          p {
+            font-size: 0.8rem;
+            font-family: $secondfont;
+            font-weight: bold;
+            margin: 0 0 0 1rem;
+            letter-spacing: 1px;
+            color: $lightwhite;
+            line-height: 20px;
+          }
+          span {
+            color: $lightwhite;
+            font-size: 0.6rem;
+            font-weight: normal;
+          }
+        }
+      }
+    }
+  }
+}
+/* end reviews */
+/* start subscribe */
+.subscribe {
+  .container {
+    .card {
+      background-color: $secondary;
+      width: 60rem;
+      box-shadow: 0 0.125rem 0.25rem rgba($mainback, 0.075);
+      @include mdquery(1200px) {
+        width: 100%;
+      }
+      .card-text {
+        color: $lightwhite;
+        font-size: 1rem;
+        margin: 25px 0;
+      }
+      .card-inputs {
+        row-gap: 35px;
+        input {
+          width: 100%;
+          outline: none;
+          font-size: 15px;
+          transition: 0.3s;
+        }
+        a {
+          @include cta;
+          font-size: 15px;
+          &:hover {
+            background: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+/* end subscribe */
+/* start footer */
+footer {
+  background-color: $footer;
+  color: $lightwhite;
+  font-size: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  @include mdquery(768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .logo-footer {
+    height: 40px;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $lightwhite;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    .social {
+      a {
+        height: 30px;
+        width: 30px;
+        border: 1px solid white;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          background-image: linear-gradient(60deg, $gradient, $primary);
+          color: white;
+        }
+      }
+    }
+  }
+}
+/* end footer */

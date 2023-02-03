@@ -1,0 +1,19 @@
+@mixin navlinks() {
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@mixin mdquery($val) {
+  @media (max-width: $val) {
+    @content;
+  }
+}
+@mixin cta() {
+  background: linear-gradient(135deg, $primary, $gradient);
+  border: none;
+  font-weight: 700;
+  font-family: $secondfont;
+  transition: 0.5s;
+  color: white;
+}
